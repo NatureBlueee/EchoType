@@ -1,0 +1,51 @@
+[package]
+name = "echokey"
+version = "0.1.0"
+edition = "2021"
+description = "你打下的每一个字，都有回声 - 系统级键盘输入记录工具"
+authors = ["EchoKey Team"]
+license = "MIT"
+repository = "https://github.com/your-username/echokey"
+
+# Windows 专用：隐藏控制台窗口
+[[bin]]
+name = "echokey"
+path = "src/main.rs"
+
+[dependencies]
+# 键盘/鼠标事件监听
+rdev = "0.5"
+
+# 剪贴板操作
+arboard = "3.4"
+
+# 系统托盘
+tray-icon = "0.14"
+
+# 全局热键
+global-hotkey = "0.5"
+
+# 获取系统目录（如 LOCALAPPDATA）
+dirs = "5.0"
+
+# 时间处理
+chrono = "0.4"
+
+# 跨线程通道（tray-icon 使用）
+crossbeam-channel = "0.5"
+
+# Windows 注册表操作（开机自启动）
+[target.'cfg(windows)'.dependencies]
+winreg = "0.52"
+
+# Windows 专用：隐藏控制台窗口
+[target.'cfg(windows)'.dependencies.windows]
+version = "0.58"
+features = ["Win32_System_Console", "Win32_UI_WindowsAndMessaging"]
+
+[profile.release]
+# 优化大小，减少内存占用
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true

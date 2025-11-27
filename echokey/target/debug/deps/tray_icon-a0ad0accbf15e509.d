@@ -1,0 +1,12 @@
+/workspace/echokey/target/debug/deps/tray_icon-a0ad0accbf15e509.d: /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/lib.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/counter.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/error.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/icon.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/platform_impl/mod.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/platform_impl/gtk/mod.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/platform_impl/gtk/icon.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/tray_icon_id.rs
+
+/workspace/echokey/target/debug/deps/libtray_icon-a0ad0accbf15e509.rmeta: /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/lib.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/counter.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/error.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/icon.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/platform_impl/mod.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/platform_impl/gtk/mod.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/platform_impl/gtk/icon.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/tray_icon_id.rs
+
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/lib.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/counter.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/error.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/icon.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/platform_impl/mod.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/platform_impl/gtk/mod.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/platform_impl/gtk/icon.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tray-icon-0.14.3/src/tray_icon_id.rs:

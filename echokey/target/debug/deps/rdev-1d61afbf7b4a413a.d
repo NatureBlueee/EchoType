@@ -1,0 +1,13 @@
+/workspace/echokey/target/debug/deps/rdev-1d61afbf7b4a413a.d: /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/lib.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/rdev.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/mod.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/common.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/display.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/keyboard.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/keycodes.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/listen.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/simulate.rs
+
+/workspace/echokey/target/debug/deps/librdev-1d61afbf7b4a413a.rmeta: /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/lib.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/rdev.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/mod.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/common.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/display.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/keyboard.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/keycodes.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/listen.rs /usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/simulate.rs
+
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/lib.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/rdev.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/mod.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/common.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/display.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/keyboard.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/keycodes.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/listen.rs:
+/usr/local/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/rdev-0.5.3/src/linux/simulate.rs:
