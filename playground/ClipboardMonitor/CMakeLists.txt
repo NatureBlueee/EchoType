@@ -18,6 +18,9 @@ set(SOURCES
     context/async_executor.cpp
     context/context_manager.cpp
     context/adapters/browser_adapter.cpp
+    context/adapters/wechat_adapter.cpp
+    context/adapters/vscode_adapter.cpp
+    context/adapters/notion_adapter.cpp
     context/utils/ui_automation_helper.cpp
     context/utils/html_parser.cpp
 )

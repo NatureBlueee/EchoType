@@ -4,6 +4,9 @@
 #include "debug_log.h"
 #include "context/context_manager.h"
 #include "context/adapters/browser_adapter.h"
+#include "context/adapters/wechat_adapter.h"
+#include "context/adapters/vscode_adapter.h"
+#include "context/adapters/notion_adapter.h"
 #include <shellapi.h>
 
 // Global variables
@@ -52,10 +55,29 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
     g_contextManager = std::make_shared<ContextManager>();
     DEBUG_LOG("ContextManager created");
 
+    if (!g_contextManager->Initialize()) {
+        DEBUG_LOG("ERROR: Failed to initialize ContextManager");
+        MessageBoxW(NULL, L"Failed to initialize context manager!", L"ClipboardMonitor Error", MB_ICONERROR);
+        return 1;
+    }
+    DEBUG_LOG("ContextManager initialized");
+
     // Register adapters
-    auto browserAdapter = std::make_shared<BrowserAdapter>(150);  // 150ms timeout
+    auto browserAdapter = std::make_shared<BrowserAdapter>(300);  // 300ms timeout (increased from 150ms to prevent data loss)
     g_contextManager->RegisterAdapter(browserAdapter);
     DEBUG_LOG("BrowserAdapter registered");
+
+    auto wechatAdapter = std::make_shared<WeChatAdapter>(200, 5);  // 200ms timeout, 5 recent messages
+    g_contextManager->RegisterAdapter(wechatAdapter);
+    DEBUG_LOG("WeChatAdapter registered");
+
+    auto vscodeAdapter = std::make_shared<VSCodeAdapter>(150);  // 150ms timeout
+    g_contextManager->RegisterAdapter(vscodeAdapter);
+    DEBUG_LOG("VSCodeAdapter registered");
+
+    auto notionAdapter = std::make_shared<NotionAdapter>(150);  // 150ms timeout
+    g_contextManager->RegisterAdapter(notionAdapter);
+    DEBUG_LOG("NotionAdapter registered");
 
     // Initialize clipboard monitor
     if (!g_monitor.Initialize(hInstance)) {

@@ -1,0 +1,338 @@
+[2025-12-29T14:00:17.126+08:00] === ClipboardMonitor Started ===
+[2025-12-29T14:00:17.129+08:00] Starting ClipboardMonitor...
+[2025-12-29T14:00:17.130+08:00] Storage initialized at: C:\Users\Lenovo\AppData\Roaming\ClipboardMonitor
+[2025-12-29T14:00:17.131+08:00] Clipboard monitor initialized successfully
+[2025-12-29T14:00:23.713+08:00] >>> WM_CLIPBOARDUPDATE received
+[2025-12-29T14:00:23.713+08:00] Sequence changed: 567 -> 572
+[2025-12-29T14:00:23.714+08:00] Source: WindowsTerminal.exe - Developer PowerShell for VS 2022
+[2025-12-29T14:00:23.714+08:00] Opening clipboard...
+[2025-12-29T14:00:23.715+08:00] Available formats: CF#13 CF#16 CF#1 CF#7 (total: 4)
+[2025-12-29T14:00:23.718+08:00] Content type: text, preview: leacc.lib /SUBSYSTEM:WINDOWS
+用于 x86 的 Microsoft (R) C/C++ 优化编译器 19.41.34120 版
+版权所有(C) Microsoft Corporation。保留所有权利。
+
+main.cpp
+clipboard_monitor.cpp
+[2025-12-29T14:00:23.726+08:00] Callback executed, entry saved
+[2025-12-29T14:00:26.566+08:00] >>> WM_CLIPBOARDUPDATE received
+[2025-12-29T14:00:26.566+08:00] Sequence changed: 572 -> 580
+[2025-12-29T14:00:26.566+08:00] Source: Antigravity.exe - Manager
+[2025-12-29T14:00:26.566+08:00] Opening clipboard...
+[2025-12-29T14:00:26.567+08:00] Failed to open clipboard, error: 5
+[2025-12-29T14:00:26.567+08:00] WARNING: GetClipboardContent returned false
+[2025-12-29T14:00:29.097+08:00] >>> WM_CLIPBOARDUPDATE received
+[2025-12-29T14:00:29.097+08:00] Sequence changed: 580 -> 588
+[2025-12-29T14:00:29.097+08:00] Source: comet.exe - 爬取Open Agents文档 - Comet
+[2025-12-29T14:00:29.098+08:00] Opening clipboard...
+[2025-12-29T14:00:29.098+08:00] Available formats: HTML Format CF#13 Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 7)
+[2025-12-29T14:00:29.098+08:00] Content type: text, preview: A
+[2025-12-29T14:00:29.099+08:00] Callback executed, entry saved
+[2025-12-29T14:00:36.795+08:00] >>> WM_CLIPBOARDUPDATE received
+[2025-12-29T14:00:36.795+08:00] Sequence changed: 588 -> 596
+[2025-12-29T14:00:36.795+08:00] Source: comet.exe - 对生活意义的迷茫与项目收尾 - Claude - Comet
+[2025-12-29T14:00:36.795+08:00] Opening clipboard...
+[2025-12-29T14:00:36.796+08:00] Failed to open clipboard, error: 5
+[2025-12-29T14:00:36.796+08:00] WARNING: GetClipboardContent returned false
+[2025-12-29T14:00:38.823+08:00] >>> WM_CLIPBOARDUPDATE received
+[2025-12-29T14:00:38.823+08:00] Sequence changed: 596 -> 604
+[2025-12-29T14:00:38.823+08:00] Source: comet.exe - NatureBlueee/Bachelor-thesis: AI literacy's impact on emploee's upward influence among Generation Z: A perspective from resource dependency theory - Comet
+[2025-12-29T14:00:38.823+08:00] Opening clipboard...
+[2025-12-29T14:00:38.824+08:00] Failed to open clipboard, error: 5
+[2025-12-29T14:00:38.824+08:00] WARNING: GetClipboardContent returned false
+[2025-12-29T14:00:44.861+08:00] >>> WM_CLIPBOARDUPDATE received
+[2025-12-29T14:00:44.861+08:00] Sequence changed: 604 -> 613
+[2025-12-29T14:00:44.861+08:00] Source: WeChat.exe - 微信
+[2025-12-29T14:00:44.861+08:00] Opening clipboard...
+[2025-12-29T14:00:44.861+08:00] Failed to open clipboard, error: 5
+[2025-12-29T14:00:44.861+08:00] WARNING: GetClipboardContent returned false
+[2025-12-29T14:00:49.637+08:00] >>> WM_CLIPBOARDUPDATE received
+[2025-12-29T14:00:49.637+08:00] Sequence changed: 613 -> 621
+[2025-12-29T14:00:49.637+08:00] Source: comet.exe - 智谱AI开放平台 - Comet
+[2025-12-29T14:00:49.637+08:00] Opening clipboard...
+[2025-12-29T14:00:49.638+08:00] Available formats: HTML Format CF#13 Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 7)
+[2025-12-29T14:00:49.638+08:00] Content type: text, preview: GLM-4.7
+推理模型
+智谱最强基座模型，编码、智能体与通用对话能力全面提升。复杂任务执行稳，创意写作有文采
+API文档
+使用指南
+立即体验
+GLM-4.6V
+视觉推理
+智谱最强多模态模型，视觉理解精度达同级别SOTA，128K 上下文，原生支持工具调用
+API文档
+使用指南
+立即体验
+CogVideoX-3
+视频生成
+智谱最强视频生成模型，支持图生、文生、首尾帧生成...
+[2025-12-29T14:00:49.639+08:00] Callback executed, entry saved
+[2025-12-29T14:01:01.240+08:00] >>> WM_CLIPBOARDUPDATE received
+[2025-12-29T14:01:01.240+08:00] Sequence changed: 621 -> 630
+[2025-12-29T14:01:01.240+08:00] Source: Notion.exe - 美丽人生 (1)
+[2025-12-29T14:01:01.240+08:00] Opening clipboard...
+[2025-12-29T14:01:01.240+08:00] Failed to open clipboard, error: 5
+[2025-12-29T14:01:01.241+08:00] WARNING: GetClipboardContent returned false
+[2025-12-29T14:01:27.013+08:00] >>> WM_CLIPBOARDUPDATE received
+[2025-12-29T14:01:27.014+08:00] Sequence changed: 630 -> 638
+[2025-12-29T14:01:27.014+08:00] Source: Antigravity.exe - Manager
+[2025-12-29T14:01:27.014+08:00] Opening clipboard...
+[2025-12-29T14:01:27.014+08:00] Available formats: HTML Format CF#13 Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 7)
+[2025-12-29T14:01:27.014+08:00] Content type: text, preview: type debug.log
+[2025-12-29T14:01:27.015+08:00] Callback executed, entry saved
+[SHUTDOWN] ClipboardMonitor exiting
+[2025-12-29T14:30:34.833+08:00] === ClipboardMonitor Started ===
+[2025-12-29T14:30:34.836+08:00] Starting ClipboardMonitor...
+[2025-12-29T14:30:34.837+08:00] Storage initialized at: C:\Users\Lenovo\AppData\Roaming\ClipboardMonitor
+[2025-12-29T14:30:34.837+08:00] Clipboard monitor initialized successfully
+[2025-12-29T14:30:42.460+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:30:42.461+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:30:42.461+08:00] Seq: 758 -> 767
+[2025-12-29T14:30:42.461+08:00] Source: WeChat.exe | 微信
+[2025-12-29T14:30:42.461+08:00] Opening clipboard...
+[2025-12-29T14:30:42.461+08:00] Failed to open clipboard, error: 5
+[2025-12-29T14:30:42.461+08:00] FAILED: GetClipboardContent returned false
+[2025-12-29T14:30:49.851+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:30:49.852+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:30:49.852+08:00] Seq: 767 -> 776
+[2025-12-29T14:30:49.852+08:00] Source: Notion.exe | 美丽人生 (1)
+[2025-12-29T14:30:49.852+08:00] Opening clipboard...
+[2025-12-29T14:30:49.852+08:00] Failed to open clipboard, error: 5
+[2025-12-29T14:30:49.852+08:00] FAILED: GetClipboardContent returned false
+[2025-12-29T14:30:55.135+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:30:55.135+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:30:55.135+08:00] Seq: 776 -> 784
+[2025-12-29T14:30:55.135+08:00] Source: Antigravity.exe | Manager
+[2025-12-29T14:30:55.135+08:00] Opening clipboard...
+[2025-12-29T14:30:55.135+08:00] Failed to open clipboard, error: 5
+[2025-12-29T14:30:55.135+08:00] FAILED: GetClipboardContent returned false
+[2025-12-29T14:30:58.505+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:30:58.505+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:30:58.505+08:00] Seq: 784 -> 792
+[2025-12-29T14:30:58.506+08:00] Source: comet.exe | 智谱AI开放平台 - Comet
+[2025-12-29T14:30:58.506+08:00] Opening clipboard...
+[2025-12-29T14:30:58.506+08:00] Available formats: HTML Format CF#13 Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 7)
+[2025-12-29T14:30:58.521+08:00] OK: text | GLM-4.7
+推理模型
+智谱最强基座模型，编码、智能体与通用对话能力全面提升。复杂任务执行稳，
+[2025-12-29T14:31:00.500+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:31:00.501+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:31:00.501+08:00] Seq: 792 -> 800
+[2025-12-29T14:31:00.501+08:00] Source: comet.exe | Marketplace Profile | Notion - Comet
+[2025-12-29T14:31:00.501+08:00] Opening clipboard...
+[2025-12-29T14:31:00.501+08:00] Failed to open clipboard, error: 5
+[2025-12-29T14:31:00.501+08:00] FAILED: GetClipboardContent returned false
+[2025-12-29T14:31:02.191+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:31:02.191+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:31:02.191+08:00] Seq: 800 -> 808
+[2025-12-29T14:31:02.191+08:00] Source: comet.exe | 对生活意义的迷茫与项目收尾 - Claude - Comet
+[2025-12-29T14:31:02.191+08:00] Opening clipboard...
+[2025-12-29T14:31:02.191+08:00] Failed to open clipboard, error: 5
+[2025-12-29T14:31:02.192+08:00] FAILED: GetClipboardContent returned false
+[2025-12-29T14:31:03.657+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:31:03.658+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:31:03.658+08:00] Seq: 808 -> 816
+[2025-12-29T14:31:03.658+08:00] Source: comet.exe | NatureBlueee/Bachelor-thesis: AI literacy's impact on emploee's upward influence among Generation Z: A perspective from resource dependency theory - Comet
+[2025-12-29T14:31:03.658+08:00] Opening clipboard...
+[2025-12-29T14:31:03.658+08:00] Failed to open clipboard, error: 5
+[2025-12-29T14:31:03.658+08:00] FAILED: GetClipboardContent returned false
+[2025-12-29T14:31:40.064+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:31:40.064+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:31:40.064+08:00] Seq: 816 -> 830
+[2025-12-29T14:31:40.064+08:00] Source: explorer.exe | Target 和 1 个其他选项卡 - 文件资源管理器
+[2025-12-29T14:31:40.064+08:00] Opening clipboard...
+[2025-12-29T14:31:40.064+08:00] Failed to open clipboard, error: 5
+[2025-12-29T14:31:40.064+08:00] FAILED: GetClipboardContent returned false
+[SHUTDOWN] ClipboardMonitor exiting
+[2025-12-29T14:33:23.968+08:00] === ClipboardMonitor Started ===
+[2025-12-29T14:33:23.971+08:00] Starting ClipboardMonitor...
+[2025-12-29T14:33:23.971+08:00] Storage initialized at: C:\Users\Lenovo\AppData\Roaming\ClipboardMonitor
+[2025-12-29T14:33:23.972+08:00] Clipboard monitor initialized successfully
+[2025-12-29T14:33:29.508+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:33:29.508+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:33:29.509+08:00] Seq: 837 -> 846
+[2025-12-29T14:33:29.509+08:00] Source: WeChat.exe | 微信
+[2025-12-29T14:33:29.517+08:00] Clipboard opened after 1ms
+[2025-12-29T14:33:29.529+08:00] Available formats: WeChat_ChatRecord_Format WeChat_RichEdit_Format RTX_RichEdit_Format QQ_Unicode_RichEdit_Format CF#13 CF#16 CF#1 CF#7 (total: 8)
+[2025-12-29T14:33:29.532+08:00] OK: text | 苹果梨的桔子:
+这个天使用户群，的作用是？
+
+月月向前冲🌟:
+这个的群 也是我们Open Agen
+[2025-12-29T14:33:33.156+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:33:33.156+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:33:33.156+08:00] Seq: 846 -> 854
+[2025-12-29T14:33:33.156+08:00] Source: comet.exe | NatureBlueee/Bachelor-thesis: AI literacy's impact on emploee's upward influence among Generation Z: A perspective from resource dependency theory - Comet
+[2025-12-29T14:33:33.157+08:00] Available formats: HTML Format CF#13 Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 7)
+[2025-12-29T14:33:33.170+08:00] OK: text | 
+Name		
+NatureBlueee
+NatureBlueee
+Integrate Me
+[2025-12-29T14:33:36.329+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:33:36.329+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:33:36.329+08:00] Seq: 854 -> 863
+[2025-12-29T14:33:36.329+08:00] Source: Notion.exe | 美丽人生 (1)
+[2025-12-29T14:33:36.347+08:00] Clipboard opened after 1ms
+[2025-12-29T14:33:36.358+08:00] Available formats: HTML Format CF#13 Chromium Web Custom MIME Data Format Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 8)
+[2025-12-29T14:33:36.360+08:00] OK: text | # 📋 我的任务看板
+
+[View: Schedule](https://www.notion
+[2025-12-29T14:33:49.705+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:33:49.706+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:33:49.706+08:00] Seq: 863 -> 877
+[2025-12-29T14:33:49.706+08:00] Source: explorer.exe | Target 和 1 个其他选项卡 - 文件资源管理器
+[2025-12-29T14:33:49.715+08:00] Clipboard opened after 1ms
+[2025-12-29T14:33:49.730+08:00] Available formats: DataObject Shell IDList Array DataObjectAttributes DataObjectAttributesRequiringElevation Shell Object Offsets Preferred DropEffect AsyncFlag CF#15 FileName FileContents FileNameW FileGroupDescriptorW Ole Private Data (total: 13)
+[2025-12-29T14:33:49.734+08:00] OK: files | 2 file(s)
+[2025-12-29T14:33:54.989+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:33:54.989+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:33:54.989+08:00] Seq: 877 -> 891
+[2025-12-29T14:33:54.989+08:00] Source: explorer.exe | Target 和 1 个其他选项卡 - 文件资源管理器
+[2025-12-29T14:33:55.005+08:00] Clipboard opened after 1ms
+[2025-12-29T14:33:55.014+08:00] Available formats: DataObject Shell IDList Array DataObjectAttributes DataObjectAttributesRequiringElevation Shell Object Offsets Preferred DropEffect AsyncFlag CF#15 FileName FileContents FileNameW FileGroupDescriptorW Ole Private Data (total: 13)
+[2025-12-29T14:33:55.018+08:00] OK: files | 2 file(s)
+[2025-12-29T14:34:02.546+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:34:02.547+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:34:02.547+08:00] Seq: 891 -> 900
+[2025-12-29T14:34:02.547+08:00] Source: Antigravity.exe | playground - Antigravity - 2025-12-27.md
+[2025-12-29T14:34:02.554+08:00] Clipboard opened after 1ms
+[2025-12-29T14:34:02.568+08:00] Available formats: HTML Format CF#13 Chromium Web Custom MIME Data Format Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 8)
+[2025-12-29T14:34:02.570+08:00] OK: text | 
+￼
+又夏天又秋冬的清透版灰蓝琥珀！
+￼
+小破折号_
+￼
+1万+
+￼
+单眼皮 过度打
+[2025-12-29T14:34:12.206+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T14:34:12.206+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T14:34:12.206+08:00] Seq: 900 -> 914
+[2025-12-29T14:34:12.206+08:00] Source: explorer.exe | Target 和 1 个其他选项卡 - 文件资源管理器
+[2025-12-29T14:34:12.222+08:00] Clipboard opened after 1ms
+[2025-12-29T14:34:12.232+08:00] Available formats: DataObject Shell IDList Array DataObjectAttributes DataObjectAttributesRequiringElevation Shell Object Offsets Preferred DropEffect AsyncFlag CF#15 FileName FileContents FileNameW FileGroupDescriptorW Ole Private Data (total: 13)
+[2025-12-29T14:34:12.235+08:00] OK: files | 2 file(s)
+[SHUTDOWN] ClipboardMonitor exiting
+[2025-12-29T16:05:30.127+08:00] === ClipboardMonitor Started ===
+[2025-12-29T16:05:30.129+08:00] Starting ClipboardMonitor...
+[2025-12-29T16:05:30.130+08:00] Storage initialized at: C:\Users\Lenovo\AppData\Roaming\ClipboardMonitor
+[2025-12-29T16:05:30.130+08:00] ContextManager created
+[2025-12-29T16:05:30.130+08:00] Registered adapter: BrowserAdapter
+[2025-12-29T16:05:30.130+08:00] BrowserAdapter registered
+[2025-12-29T16:05:30.130+08:00] Clipboard monitor initialized successfully
+[2025-12-29T16:05:30.130+08:00] ContextManager attached to ClipboardMonitor
+[2025-12-29T16:05:41.919+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T16:05:41.920+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T16:05:41.920+08:00] Seq: 1193 -> 1201
+[2025-12-29T16:05:41.920+08:00] Source: comet.exe | AI赛事通 - 2025年12月AI竞赛和黑客松汇总合集AI赛事通(CompeteHub) 专注于精心挑选最新的全球AI - 掘金 - Comet
+[2025-12-29T16:05:41.932+08:00] Clipboard opened after 1ms
+[2025-12-29T16:05:41.944+08:00] Available formats: HTML Format CF#13 Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 7)
+[2025-12-29T16:05:41.948+08:00] OK: text | 多平台整合：聚合来自Kaggle、天池、DataCastle、华为云、百度飞桨等50+主流竞赛平台的
+[2025-12-29T16:05:41.948+08:00] ContextManager not initialized
+[2025-12-29T16:05:48.933+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T16:05:48.933+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T16:05:48.934+08:00] Seq: 1201 -> 1209
+[2025-12-29T16:05:48.934+08:00] Source: comet.exe | 搜索结果 - lovefreedomandspirit@gmail.com - Gmail - Comet
+[2025-12-29T16:05:48.950+08:00] Clipboard opened after 1ms
+[2025-12-29T16:05:48.955+08:00] Available formats: HTML Format CF#13 Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 7)
+[2025-12-29T16:05:48.957+08:00] OK: text | 期活跃。
+​
+
+全球在线赛事
+Gemini 3 Hackathon：持续至2026年2月9日
+[2025-12-29T16:05:48.958+08:00] ContextManager not initialized
+[2025-12-29T16:05:55.291+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T16:05:55.292+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T16:05:55.292+08:00] Seq: 1209 -> 1217
+[2025-12-29T16:05:55.292+08:00] Source: comet.exe | Plan Ahead: Winter Break Closure & Application Prep - lovefreedomandspirit@gmail.com - Gmail - Comet
+[2025-12-29T16:05:55.301+08:00] Clipboard opened after 1ms
+[2025-12-29T16:05:55.311+08:00] Available formats: HTML Format CF#13 Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 7)
+[2025-12-29T16:05:55.313+08:00] OK: text | Dear Nature,
+
+This is a reminder that NYU SPS an
+[2025-12-29T16:05:55.313+08:00] ContextManager not initialized
+[2025-12-29T16:06:00.853+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T16:06:00.854+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T16:06:00.854+08:00] Seq: 1217 -> 1225
+[2025-12-29T16:06:00.854+08:00] Source: comet.exe | AI赛事通 - 2025年12月AI竞赛和黑客松汇总合集AI赛事通(CompeteHub) 专注于精心挑选最新的全球AI - 掘金 - Comet
+[2025-12-29T16:06:00.866+08:00] Clipboard opened after 1ms
+[2025-12-29T16:06:00.874+08:00] Available formats: HTML Format CF#13 Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 7)
+[2025-12-29T16:06:00.876+08:00] OK: text | 竞赛奖金团队数开始日期结束日期类型章鱼黑客松¥25,5004152025年12月1日2025年12月
+[2025-12-29T16:06:00.876+08:00] ContextManager not initialized
+[2025-12-29T16:06:13.130+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T16:06:13.131+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T16:06:13.131+08:00] Seq: 1225 -> 1230
+[2025-12-29T16:06:13.131+08:00] Source: Antigravity.exe | playground - Antigravity - ClipboardMonitor.exe
+[2025-12-29T16:06:13.147+08:00] Clipboard opened after 1ms
+[2025-12-29T16:06:13.153+08:00] Available formats: CF#13 CF#16 CF#1 CF#7 (total: 4)
+[2025-12-29T16:06:13.156+08:00] OK: text |  cat $env:APPDATA\ClipboardMonitor\clipboard_histo
+[2025-12-29T16:06:13.156+08:00] ContextManager not initialized
+[2025-12-29T16:06:25.126+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T16:06:25.126+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T16:06:25.126+08:00] Seq: 1230 -> 1235
+[2025-12-29T16:06:25.126+08:00] Source: WindowsTerminal.exe | Developer PowerShell for VS 2022
+[2025-12-29T16:06:25.133+08:00] Clipboard opened after 1ms
+[2025-12-29T16:06:25.141+08:00] Available formats: CF#13 CF#16 CF#1 CF#7 (total: 4)
+[2025-12-29T16:06:25.144+08:00] OK: text | PS D:\Profolio\EchoType\playground\ClipboardMonito
+[2025-12-29T16:06:25.144+08:00] ContextManager not initialized
+[2025-12-29T16:08:14.677+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T16:08:14.678+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T16:08:14.678+08:00] Seq: 1235 -> 1243
+[2025-12-29T16:08:14.678+08:00] Source: chrome.exe | (6) Home / X - Google Chrome
+[2025-12-29T16:08:14.687+08:00] Clipboard opened after 1ms
+[2025-12-29T16:08:14.697+08:00] Available formats: HTML Format CF#13 Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 7)
+[2025-12-29T16:08:14.699+08:00] OK: text | 
+
+未选择任何文件
+Your Home Timeline
+Aqib
+@MAQIB135
+
+[2025-12-29T16:08:14.699+08:00] ContextManager not initialized
+[2025-12-29T16:08:19.692+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T16:08:19.693+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T16:08:19.693+08:00] Seq: 1243 -> 1251
+[2025-12-29T16:08:19.693+08:00] Source: chrome.exe | (6) Home / X - Google Chrome
+[2025-12-29T16:08:19.699+08:00] Clipboard opened after 1ms
+[2025-12-29T16:08:19.711+08:00] Available formats: HTML Format CF#13 Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 7)
+[2025-12-29T16:08:19.713+08:00] OK: text | Meet the world’s first reasoning video model — pow
+[2025-12-29T16:08:19.713+08:00] ContextManager not initialized
+[2025-12-29T16:08:50.049+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T16:08:50.049+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T16:08:50.049+08:00] Seq: 1251 -> 1259
+[2025-12-29T16:08:50.049+08:00] Source: chrome.exe | Claude - Google Chrome
+[2025-12-29T16:08:50.059+08:00] Clipboard opened after 1ms
+[2025-12-29T16:08:50.074+08:00] Available formats: HTML Format CF#13 Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 7)
+[2025-12-29T16:08:50.077+08:00] OK: text | Your rate limits are 2x higher through 12/31. Than
+[2025-12-29T16:08:50.078+08:00] ContextManager not initialized
+[2025-12-29T16:08:57.888+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T16:08:57.889+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T16:08:57.889+08:00] Seq: 1259 -> 1267
+[2025-12-29T16:08:57.889+08:00] Source: chrome.exe | 优化美学提示词的元提示词创作 - Claude - Google Chrome
+[2025-12-29T16:08:57.901+08:00] Clipboard opened after 1ms
+[2025-12-29T16:08:57.909+08:00] Available formats: HTML Format CF#13 Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 7)
+[2025-12-29T16:08:57.911+08:00] OK: text | 的地和出行时间（2）旅行天数和同行人群（3）预算范围和兴趣偏好（如自然风光、历史文化、美食探索等），
+[2025-12-29T16:08:57.911+08:00] ContextManager not initialized
+[2025-12-29T16:09:06.436+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T16:09:06.436+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T16:09:06.437+08:00] Seq: 1267 -> 1275
+[2025-12-29T16:09:06.437+08:00] Source: chrome.exe | Notifications / X - Google Chrome
+[2025-12-29T16:09:06.447+08:00] Clipboard opened after 1ms
+[2025-12-29T16:09:06.465+08:00] Available formats: HTML Format CF#13 Chromium internal source RFH token Chromium internal source URL CF#16 CF#1 CF#7 (total: 7)
+[2025-12-29T16:09:06.467+08:00] OK: text | 
+All
+Verified
+Mentions
+
+See new posts
+Notifi
+[2025-12-29T16:09:06.468+08:00] ContextManager not initialized
+[2025-12-29T16:09:57.314+08:00] >>> WM_CLIPBOARDUPDATE - posting deferred message
+[2025-12-29T16:09:57.314+08:00] >>> WM_DEFERRED_CLIPBOARD - now processing
+[2025-12-29T16:09:57.314+08:00] Seq: 1275 -> 1289
+[2025-12-29T16:09:57.315+08:00] Source: explorer.exe | Target 和 1 个其他选项卡 - 文件资源管理器
+[2025-12-29T16:09:57.324+08:00] Clipboard opened after 1ms
+[2025-12-29T16:09:57.336+08:00] Available formats: DataObject Shell IDList Array DataObjectAttributes DataObjectAttributesRequiringElevation Shell Object Offsets Preferred DropEffect AsyncFlag CF#15 FileName FileContents FileNameW FileGroupDescriptorW Ole Private Data (total: 13)
+[2025-12-29T16:09:57.340+08:00] OK: files | 2 file(s)
+[2025-12-29T16:09:57.340+08:00] ContextManager not initialized

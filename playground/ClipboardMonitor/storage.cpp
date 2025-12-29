@@ -92,6 +92,85 @@ std::string Storage::EntryToJson(const ClipboardEntry& entry) const {
                 json << ",\n      \"page_title\": \"" << Utils::EscapeJson(Utils::WideToUtf8(browserCtx->pageTitle)) << "\"";
             }
         }
+        else if (ctx->adapterType == "wechat") {
+            const WeChatContext* wechatCtx = static_cast<const WeChatContext*>(ctx.get());
+            if (!wechatCtx->contactName.empty()) {
+                json << ",\n      \"contact_name\": \"" << Utils::EscapeJson(Utils::WideToUtf8(wechatCtx->contactName)) << "\"";
+            }
+            if (!wechatCtx->chatType.empty()) {
+                json << ",\n      \"chat_type\": \"" << Utils::EscapeJson(Utils::WideToUtf8(wechatCtx->chatType)) << "\"";
+            }
+            if (!wechatCtx->recentMessages.empty()) {
+                json << ",\n      \"recent_messages\": [\n";
+                for (size_t i = 0; i < wechatCtx->recentMessages.size(); i++) {
+                    json << "        \"" << Utils::EscapeJson(Utils::WideToUtf8(wechatCtx->recentMessages[i])) << "\"";
+                    if (i < wechatCtx->recentMessages.size() - 1) {
+                        json << ",";
+                    }
+                    json << "\n";
+                }
+                json << "      ]";
+            }
+        }
+        else if (ctx->adapterType == "vscode") {
+            const VSCodeContext* vscodeCtx = static_cast<const VSCodeContext*>(ctx.get());
+            if (!vscodeCtx->fileName.empty()) {
+                json << ",\n      \"file_name\": \"" << Utils::EscapeJson(Utils::WideToUtf8(vscodeCtx->fileName)) << "\"";
+            }
+            if (!vscodeCtx->filePath.empty()) {
+                json << ",\n      \"file_path\": \"" << Utils::EscapeJson(Utils::WideToUtf8(vscodeCtx->filePath)) << "\"";
+            }
+            if (!vscodeCtx->projectName.empty()) {
+                json << ",\n      \"project_name\": \"" << Utils::EscapeJson(Utils::WideToUtf8(vscodeCtx->projectName)) << "\"";
+            }
+            if (!vscodeCtx->projectRoot.empty()) {
+                json << ",\n      \"project_root\": \"" << Utils::EscapeJson(Utils::WideToUtf8(vscodeCtx->projectRoot)) << "\"";
+            }
+            if (vscodeCtx->lineNumber > 0) {
+                json << ",\n      \"line_number\": " << vscodeCtx->lineNumber;
+            }
+            if (vscodeCtx->columnNumber > 0) {
+                json << ",\n      \"column_number\": " << vscodeCtx->columnNumber;
+            }
+            if (!vscodeCtx->language.empty()) {
+                json << ",\n      \"language\": \"" << Utils::EscapeJson(vscodeCtx->language) << "\"";
+            }
+            json << ",\n      \"is_modified\": " << (vscodeCtx->isModified ? "true" : "false");
+            if (!vscodeCtx->openFiles.empty()) {
+                json << ",\n      \"open_files\": [\n";
+                for (size_t i = 0; i < vscodeCtx->openFiles.size(); i++) {
+                    json << "        \"" << Utils::EscapeJson(Utils::WideToUtf8(vscodeCtx->openFiles[i])) << "\"";
+                    if (i < vscodeCtx->openFiles.size() - 1) {
+                        json << ",";
+                    }
+                    json << "\n";
+                }
+                json << "      ]";
+            }
+        }
+        else if (ctx->adapterType == "notion") {
+            const NotionContext* notionCtx = static_cast<const NotionContext*>(ctx.get());
+            if (!notionCtx->pagePath.empty()) {
+                json << ",\n      \"page_path\": \"" << Utils::EscapeJson(Utils::WideToUtf8(notionCtx->pagePath)) << "\"";
+            }
+            if (!notionCtx->workspace.empty()) {
+                json << ",\n      \"workspace\": \"" << Utils::EscapeJson(Utils::WideToUtf8(notionCtx->workspace)) << "\"";
+            }
+            if (!notionCtx->pageType.empty()) {
+                json << ",\n      \"page_type\": \"" << Utils::EscapeJson(Utils::WideToUtf8(notionCtx->pageType)) << "\"";
+            }
+            if (!notionCtx->breadcrumbs.empty()) {
+                json << ",\n      \"breadcrumbs\": [\n";
+                for (size_t i = 0; i < notionCtx->breadcrumbs.size(); i++) {
+                    json << "        \"" << Utils::EscapeJson(Utils::WideToUtf8(notionCtx->breadcrumbs[i])) << "\"";
+                    if (i < notionCtx->breadcrumbs.size() - 1) {
+                        json << ",";
+                    }
+                    json << "\n";
+                }
+                json << "      ]";
+            }
+        }
 
         // Serialize metadata if present
         if (!ctx->metadata.empty()) {

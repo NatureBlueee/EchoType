@@ -69,11 +69,14 @@ struct WeChatContext : public ContextData {
 
 // VS Code-specific context
 struct VSCodeContext : public ContextData {
+    std::wstring fileName;            // File name (e.g., "main.cpp")
     std::wstring filePath;            // Full file path
+    std::wstring projectName;         // Project name
     std::wstring projectRoot;         // Project root directory
-    int lineNumber = -1;              // Current line number
-    int columnNumber = -1;            // Current column number
-    std::wstring language;            // Programming language
+    int lineNumber = 0;               // Current line number (0 if unknown)
+    int columnNumber = 0;             // Current column number (0 if unknown)
+    std::string language;             // Programming language (e.g., "C++", "Python")
+    bool isModified = false;          // True if file has unsaved changes
     std::vector<std::wstring> openFiles;  // List of open files (optional)
 
     VSCodeContext() {

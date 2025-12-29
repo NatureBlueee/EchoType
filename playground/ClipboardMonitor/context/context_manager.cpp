@@ -3,6 +3,7 @@
 #include "../debug_log.h"
 #include "../utils.h"
 #include <sstream>
+#include <atomic>
 
 ContextManager::ContextManager(size_t threadPoolSize)
     : m_defaultTimeout(100)
@@ -67,9 +68,12 @@ void ContextManager::GetContextAsync(const SourceInfo& source, ContextCallback c
         timeout = m_defaultTimeout;
     }
 
+    // Use shared atomic flag to ensure callback is called only once
+    auto callbackCalled = std::make_shared<std::atomic<bool>>(false);
+
     // Submit async task
     m_executor->SubmitWithTimeout(
-        [adapter, source, callback]() {
+        [adapter, source, callback, callbackCalled]() {
             std::shared_ptr<ContextData> contextData = nullptr;
 
             try {
@@ -92,22 +96,28 @@ void ContextManager::GetContextAsync(const SourceInfo& source, ContextCallback c
                 contextData->error = L"Unknown exception";
             }
 
-            // Call callback with result
-            if (callback) {
-                callback(contextData);
+            // Call callback with result only if not already called
+            bool expected = false;
+            if (callbackCalled->compare_exchange_strong(expected, true)) {
+                if (callback) {
+                    callback(contextData);
+                }
             }
         },
         timeout,
-        [callback]() {
-            // Timeout callback
-            DEBUG_LOG("Context fetch timeout");
+        [callback, callbackCalled]() {
+            // Timeout callback - only call if task hasn't completed yet
+            bool expected = false;
+            if (callbackCalled->compare_exchange_strong(expected, true)) {
+                DEBUG_LOG("Context fetch timeout");
 
-            auto timeoutContext = std::make_shared<ContextData>();
-            timeoutContext->success = false;
-            timeoutContext->error = L"Timeout";
+                auto timeoutContext = std::make_shared<ContextData>();
+                timeoutContext->success = false;
+                timeoutContext->error = L"Timeout";
 
-            if (callback) {
-                callback(timeoutContext);
+                if (callback) {
+                    callback(timeoutContext);
+                }
             }
         }
     );

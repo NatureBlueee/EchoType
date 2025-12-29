@@ -234,20 +234,34 @@ std::wstring BrowserAdapter::ExtractPageTitle(const std::wstring& windowTitle,
     std::wstring lowerProcessName = Utils::ToLower(processName);
 
     // Browser-specific title patterns:
-    // Chrome: "Page Title - Google Chrome"
-    // Edge: "Page Title - Microsoft Edge"
-    // Firefox: "Page Title - Mozilla Firefox"
-    // Opera: "Page Title - Opera"
-    // Brave: "Page Title - Brave"
-    // Vivaldi: "Page Title - Vivaldi"
-
+    // Most browsers use: "Page Title - Browser Name"
     std::vector<std::wstring> suffixes = {
+        // Mainstream browsers
         L" - Google Chrome",
         L" - Microsoft Edge",
         L" - Mozilla Firefox",
         L" - Opera",
         L" - Brave",
-        L" - Vivaldi"
+        L" - Vivaldi",
+        L" - Chromium",
+
+        // AI-powered browsers
+        L" - Comet",         // Perplexity
+        L" - Atlas",         // ChatGPT browser
+        L" - Arc",
+
+        // Chinese browsers (English names)
+        L" - 360 Secure Browser",
+        L" - 360 Chrome",
+        L" - QQ Browser",
+        L" - Sogou Browser",
+        L" - Liebao Browser",
+        L" - 2345 Browser",
+        L" - Maxthon",
+
+        // Generic patterns
+        L" - Browser",
+        L" - Web Browser"
     };
 
     // Try to remove browser suffix
@@ -265,23 +279,52 @@ std::wstring BrowserAdapter::ExtractPageTitle(const std::wstring& windowTitle,
 
 bool BrowserAdapter::IsSupportedBrowser(const std::wstring& processName)
 {
-    // List of supported browsers (lowercase)
+    // List of explicitly supported browsers (lowercase)
     std::vector<std::wstring> supportedBrowsers = {
+        // Mainstream browsers
         L"chrome.exe",
         L"msedge.exe",
         L"firefox.exe",
         L"opera.exe",
         L"brave.exe",
         L"vivaldi.exe",
+        L"chromium.exe",
         L"iexplore.exe",     // Internet Explorer (legacy)
+
+        // AI-powered browsers
+        L"comet.exe",        // Perplexity browser
+        L"atlas.exe",        // ChatGPT browser
+        L"arc.exe",          // Arc browser
+
+        // Chinese browsers (Chromium-based)
+        L"360se.exe",        // 360 Secure Browser
+        L"360chrome.exe",    // 360 Chrome
+        L"qqbrowser.exe",    // QQ Browser
+        L"sogouexplorer.exe", // Sogou Browser
+        L"liebao.exe",       // Liebao Browser
+        L"2345explorer.exe", // 2345 Browser
+        L"maxthon.exe",      // Maxthon Browser
+
+        // Developer browsers
+        L"electron.exe",     // Electron-based apps
         L"browser.exe",      // Generic browser name
-        L"chromium.exe"      // Chromium-based browsers
+        L"webbrowser.exe"    // Generic web browser
     };
 
     for (const auto& browser : supportedBrowsers) {
         if (processName == browser) {
             return true;
         }
+    }
+
+    // Additional heuristic: Check if the process name contains "browser", "chrome", or "web"
+    // This helps support new Chromium-based browsers automatically
+    if (processName.find(L"browser") != std::wstring::npos ||
+        processName.find(L"chrome") != std::wstring::npos ||
+        processName.find(L"web") != std::wstring::npos ||
+        processName.find(L"edge") != std::wstring::npos) {
+        DEBUG_LOG("BrowserAdapter: Heuristic match for potential browser: " + Utils::WideToUtf8(processName));
+        return true;
     }
 
     return false;

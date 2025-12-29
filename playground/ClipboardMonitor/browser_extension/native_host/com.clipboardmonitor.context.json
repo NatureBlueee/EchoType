@@ -1,0 +1,9 @@
+{
+  "name": "com.clipboardmonitor.context",
+  "description": "ClipboardMonitor Native Messaging Host",
+  "path": "C:\\Users\\%USERNAME%\\AppData\\Roaming\\ClipboardMonitor\\native_host.exe",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://EXTENSION_ID_HERE/"
+  ]
+}
