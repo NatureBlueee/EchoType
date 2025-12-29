@@ -9,6 +9,7 @@
 #include <sstream>
 #include <iomanip>
 #include <chrono>
+#include <cwctype>
 #include <psapi.h>
 #include <shlobj.h>
 
@@ -106,6 +107,15 @@ inline bool EnsureDirectoryExists(const std::wstring& path) {
 inline std::string TruncateForPreview(const std::string& str, size_t maxLen = 100) {
     if (str.length() <= maxLen) return str;
     return str.substr(0, maxLen) + "...";
+}
+
+// Convert wide string to lowercase
+inline std::wstring ToLower(const std::wstring& str) {
+    std::wstring result = str;
+    for (wchar_t& c : result) {
+        c = ::towlower(c);
+    }
+    return result;
 }
 
 } // namespace Utils

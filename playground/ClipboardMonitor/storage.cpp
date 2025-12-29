@@ -1,5 +1,6 @@
 #include "storage.h"
 #include "utils.h"
+#include "context/context_data.h"
 #include <fstream>
 #include <sstream>
 
@@ -58,15 +59,66 @@ std::string Storage::EntryToJson(const ClipboardEntry& entry) const {
     json << "      \"window_title\": \"" << Utils::EscapeJson(Utils::WideToUtf8(entry.source.windowTitle)) << "\",\n";
     json << "      \"pid\": " << entry.source.processId << "\n";
     json << "    }";
-    
-    if (!entry.contextUrl.empty()) {
+
+    // Serialize context data if available
+    if (entry.contextData) {
+        const auto& ctx = entry.contextData;
+        json << ",\n    \"context\": {\n";
+        json << "      \"adapter_type\": \"" << Utils::EscapeJson(ctx->adapterType) << "\",\n";
+        json << "      \"success\": " << (ctx->success ? "true" : "false") << ",\n";
+        json << "      \"fetch_time_ms\": " << ctx->fetchTimeMs;
+
+        // Add common fields
+        if (!ctx->url.empty()) {
+            json << ",\n      \"url\": \"" << Utils::EscapeJson(Utils::WideToUtf8(ctx->url)) << "\"";
+        }
+        if (!ctx->title.empty()) {
+            json << ",\n      \"title\": \"" << Utils::EscapeJson(Utils::WideToUtf8(ctx->title)) << "\"";
+        }
+        if (!ctx->error.empty()) {
+            json << ",\n      \"error\": \"" << Utils::EscapeJson(Utils::WideToUtf8(ctx->error)) << "\"";
+        }
+
+        // Serialize adapter-specific fields
+        if (ctx->adapterType == "browser") {
+            const BrowserContext* browserCtx = static_cast<const BrowserContext*>(ctx.get());
+            if (!browserCtx->sourceUrl.empty()) {
+                json << ",\n      \"source_url\": \"" << Utils::EscapeJson(Utils::WideToUtf8(browserCtx->sourceUrl)) << "\"";
+            }
+            if (!browserCtx->addressBarUrl.empty()) {
+                json << ",\n      \"address_bar_url\": \"" << Utils::EscapeJson(Utils::WideToUtf8(browserCtx->addressBarUrl)) << "\"";
+            }
+            if (!browserCtx->pageTitle.empty()) {
+                json << ",\n      \"page_title\": \"" << Utils::EscapeJson(Utils::WideToUtf8(browserCtx->pageTitle)) << "\"";
+            }
+        }
+
+        // Serialize metadata if present
+        if (!ctx->metadata.empty()) {
+            json << ",\n      \"metadata\": {\n";
+            bool firstMeta = true;
+            for (const auto& pair : ctx->metadata) {
+                if (!firstMeta) {
+                    json << ",\n";
+                }
+                json << "        \"" << Utils::EscapeJson(Utils::WideToUtf8(pair.first)) << "\": \""
+                     << Utils::EscapeJson(Utils::WideToUtf8(pair.second)) << "\"";
+                firstMeta = false;
+            }
+            json << "\n      }";
+        }
+
+        json << "\n    }";
+    }
+    // Fallback: serialize old contextUrl field if present
+    else if (!entry.contextUrl.empty()) {
         json << ",\n    \"context\": {\n";
         json << "      \"url\": \"" << Utils::EscapeJson(Utils::WideToUtf8(entry.contextUrl)) << "\"\n";
         json << "    }";
     }
-    
+
     json << "\n  }";
-    
+
     return json.str();
 }
 

@@ -2,11 +2,14 @@
 #include "storage.h"
 #include "utils.h"
 #include "debug_log.h"
+#include "context/context_manager.h"
+#include "context/adapters/browser_adapter.h"
 #include <shellapi.h>
 
 // Global variables
 ClipboardMonitor g_monitor;
 Storage g_storage;
+std::shared_ptr<ContextManager> g_contextManager;
 NOTIFYICONDATAW g_nid = {};
 bool g_monitoring = true;
 WNDPROC g_originalWndProc = nullptr;  // Save original window procedure
@@ -44,7 +47,16 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
         return 1;
     }
     DEBUG_LOG("Storage initialized at: " + Utils::WideToUtf8(appDataPath));
-    
+
+    // Initialize context manager
+    g_contextManager = std::make_shared<ContextManager>();
+    DEBUG_LOG("ContextManager created");
+
+    // Register adapters
+    auto browserAdapter = std::make_shared<BrowserAdapter>(150);  // 150ms timeout
+    g_contextManager->RegisterAdapter(browserAdapter);
+    DEBUG_LOG("BrowserAdapter registered");
+
     // Initialize clipboard monitor
     if (!g_monitor.Initialize(hInstance)) {
         DEBUG_LOG("ERROR: Failed to initialize clipboard monitor");
@@ -52,7 +64,11 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
         return 1;
     }
     DEBUG_LOG("Clipboard monitor initialized successfully");
-    
+
+    // Set context manager on clipboard monitor
+    g_monitor.SetContextManager(g_contextManager);
+    DEBUG_LOG("ContextManager attached to ClipboardMonitor");
+
     // Set up the callback
     g_monitor.SetCallback([](const ClipboardEntry& entry) {
         if (g_monitoring) {

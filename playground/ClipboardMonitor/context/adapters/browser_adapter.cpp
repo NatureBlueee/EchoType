@@ -37,7 +37,7 @@ std::shared_ptr<ContextData> BrowserAdapter::GetContext(const SourceInfo& source
         }
 
         // Method 2: Try to get URL from address bar via UI Automation (primary, accurate)
-        std::wstring addressBarUrl = GetUrlFromAddressBar(source.hwnd, source.processName);
+        std::wstring addressBarUrl = GetUrlFromAddressBar(source.windowHandle, source.processName);
         if (!addressBarUrl.empty()) {
             context->addressBarUrl = addressBarUrl;
             DEBUG_LOG("BrowserAdapter: Got URL from address bar: " + Utils::WideToUtf8(addressBarUrl));
