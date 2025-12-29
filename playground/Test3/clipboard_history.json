@@ -1,0 +1,167 @@
+{
+"version": "1.0",
+"generated": "2025-12-29T17:50:32.553+08:00",
+"entries": [
+  {
+    "timestamp": "2025-12-29T17:49:58.971+08:00",
+    "content_type": "text",
+    "content": "小琬:\n很不错 可以尝试一下申请\n\nNature:\n你晚上在哪吃？\n\nNature:\n我们各自吃还是？我现在已经有点饿了\n\nNature:\n\n\n小琬:\n你先吃吧 宝宝\n\n小琬:\n我还不太饿\n\nNature:\n\n",
+    "content_preview": "小琬:\n很不错 可以尝试一下申请\n\nNature:\n你晚上在哪吃？\n\nNature:\n我们各自吃还是？我现在已经有点饿了\n\nNature:\n\n\n小琬:\n你先吃吧 宝宝\n\n小琬:\n我还不太饿\n\nNature:\n\n",
+    "source": {
+      "process_name": "WeChat.exe",
+      "process_path": "C:\\Program Files (x86)\\Tencent\\WeChat\\WeChat.exe",
+      "window_title": "微信",
+      "pid": 35888
+    },
+    "context": {
+      "adapter_type": "wechat",
+      "success": true,
+      "fetch_time_ms": 2361,
+      "title": "Nature",
+      "contact_name": "Nature",
+      "chat_type": "private",
+      "recent_messages": [
+        "元宝已置顶",
+        "Multi-Agent Hackathon 2025",
+        "🎄 26 NEU留学生社区",
+        "Aippy 创作者社区",
+        "loomi智能体 & 狂热AI 体验群"
+      ],
+      "metadata": {
+        "chat_type": "private",
+        "message_count": "5"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-12-29T17:50:04.110+08:00",
+    "content_type": "text",
+    "content": "koko:\n[动画表情]\n\n肖滢-OpenAgents:\n朋友们，出教程啊！！！！！\n\nkoko:\n你好牛啊\n\n肖滢-OpenAgents:\n他真的好牛\n\nkoko:\n随手就是个pr\n",
+    "content_preview": "koko:\n[动画表情]\n\n肖滢-OpenAgents:\n朋友们，出教程啊！！！！！\n\nkoko:\n你好牛啊\n\n肖滢-OpenAgents:\n他真的好牛\n\nkoko:\n随手就是个pr\n",
+    "source": {
+      "process_name": "WeChat.exe",
+      "process_path": "C:\\Program Files (x86)\\Tencent\\WeChat\\WeChat.exe",
+      "window_title": "微信",
+      "pid": 35888
+    },
+    "context": {
+      "adapter_type": "wechat",
+      "success": true,
+      "fetch_time_ms": 743,
+      "title": "Nature关于AI时代的一切！",
+      "contact_name": "Nature关于AI时代的一切！",
+      "chat_type": "private",
+      "recent_messages": [
+        "🎄 26 NEU留学生社区",
+        "Aippy 创作者社区",
+        "loomi智能体 & 狂热AI 体验群",
+        "妈妈",
+        "一起说Ai、用Ai吧😜👀"
+      ],
+      "metadata": {
+        "chat_type": "private",
+        "message_count": "5"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-12-29T17:50:08.974+08:00",
+    "content_type": "text",
+    "content": "Nature:\n[链接]我在京东挑了样好东西，请你帮我付个款吧\n\nNature:\n\n\n弘厚铝型材精密折弯:\n付了\n\nNature:\n[视频聊天]\n\n弘厚铝型材精密折弯:\n爸爸同意给你换电脑\n\n弘厚铝型材精密折弯:\n儿子，通过昨晚的聊天，妈妈感受到儿子这段时间的变化与成长，处理事情非常稳当，有担当，敢于面对任何问题出现的可能，并能勇敢应对，昨晚妈妈就想发信息给你说了妈妈特别开心，以你为骄傲，我儿子已经长大了，现在是有担当、能扛事、遇事沉稳笃定，敢于直面所有可能性，还能从容应对一切难题，妥妥的长成有肩膀、有魄力的男子汉了！\n",
+    "content_preview": "Nature:\n[链接]我在京东挑了样好东西，请你帮我付个款吧\n\nNature:\n\n\n弘厚铝型材精密折弯:\n付了\n\nNature:\n[视频聊天]\n\n弘厚铝型材精密折弯:\n爸爸同意给你换电脑\n\n弘厚铝型材精密折弯:\n儿子，通过昨晚的聊天，妈妈感受到儿子这段时间的变化与成长，处理事情非常稳当，有担当，敢于面对任何问题出现的可能，并能勇敢应对，昨晚妈妈就想发信息给你说了妈妈特别开心，以你为骄傲，我儿子已...",
+    "source": {
+      "process_name": "WeChat.exe",
+      "process_path": "C:\\Program Files (x86)\\Tencent\\WeChat\\WeChat.exe",
+      "window_title": "微信",
+      "pid": 35888
+    },
+    "context": {
+      "adapter_type": "wechat",
+      "success": true,
+      "fetch_time_ms": 726,
+      "title": "小琬",
+      "contact_name": "小琬",
+      "chat_type": "private",
+      "recent_messages": [
+        "Aippy 创作者社区",
+        "loomi智能体 & 狂热AI 体验群",
+        "妈妈",
+        "一起说Ai、用Ai吧😜👀",
+        "ChatCut用户群 1"
+      ],
+      "metadata": {
+        "chat_type": "private",
+        "message_count": "5"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-12-29T17:50:14.537+08:00",
+    "content_type": "text",
+    "content": "# 📋 我的任务看板\r\n\r\n[View: Schedule](https://www.notion.so/2d7a78e8050181c6a402cc5d95fa4238?pvs=21)",
+    "content_preview": "# 📋 我的任务看板\r\n\r\n[View: Schedule](https://www.notion.so/2d7a78e8050181c6a402cc5d95fa4238?pvs=21)",
+    "source": {
+      "process_name": "Notion.exe",
+      "process_path": "C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Notion\\Notion.exe",
+      "window_title": "美丽人生 (1)",
+      "pid": 21816
+    },
+    "context": {
+      "adapter_type": "notion",
+      "success": true,
+      "fetch_time_ms": 755,
+      "url": "notion://跳至内容/主页/会议/Notion AI/Inbox/Today/Week/Projects/以整页形式打开/准备谈判课考试资料 Doing/美丽人生 (1)",
+      "title": "美丽人生 (1)",
+      "page_path": "notion://跳至内容/主页/会议/Notion AI/Inbox/Today/Week/Projects/以整页形式打开/准备谈判课考试资料 Doing/美丽人生 (1)",
+      "workspace": "跳至内容",
+      "page_type": "page",
+      "breadcrumbs": [
+        "跳至内容",
+        "主页",
+        "会议",
+        "Notion AI",
+        "Inbox",
+        "Today",
+        "Week",
+        "Projects",
+        "以整页形式打开",
+        "准备谈判课考试资料 Doing"
+      ],
+      "metadata": {
+        "app": "Notion",
+        "page_type": "page"
+      }
+    }
+  },
+  {
+    "timestamp": "2025-12-29T17:50:21.632+08:00",
+    "content_type": "text",
+    "content": "：将个人桌面复刻到网站，展示自己\r\n\r\n**当前进度**：[claude.app](http://claude.app)已成功重建，验证了通过Claude Code拆解原网站代码可以高精度实现\r\n\r\n**工作节奏**：每周二利用本周Claude剩余额度进行大型工作\r\n\r\n**性质**：个人娱乐项目，无时间压",
+    "content_preview": "：将个人桌面复刻到网站，展示自己\r\n\r\n**当前进度**：[claude.app](http://claude.app)已成功重建，验证了通过Claude Code拆解原网站代码可以高精度实现\r\n\r\n**工作节奏**：每周二利用本周Claude剩余额度进行大型工作\r\n\r\n**性质**：个人娱乐项目，无时间压",
+    "source": {
+      "process_name": "Notion.exe",
+      "process_path": "C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Notion\\Notion.exe",
+      "window_title": "美丽人生 (1)",
+      "pid": 21816
+    },
+    "context": {
+      "adapter_type": "",
+      "success": false,
+      "fetch_time_ms": 0,
+      "error": "Timeout"
+    }
+  },
+  {
+    "timestamp": "2025-12-29T17:50:32.519+08:00",
+    "content_type": "files",
+    "content": "C:\\Users\\Lenovo\\AppData\\Roaming\\ClipboardMonitor\\clipboard_history.json\nC:\\Users\\Lenovo\\AppData\\Roaming\\ClipboardMonitor\\debug.log",
+    "content_preview": "2 file(s)",
+    "source": {
+      "process_name": "explorer.exe",
+      "process_path": "C:\\Windows\\explorer.exe",
+      "window_title": "ClipboardMonitor 和 1 个其他选项卡 - 文件资源管理器",
+      "pid": 9688
+    }
+  }
+]
+}

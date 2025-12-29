@@ -13,25 +13,12 @@ if exist "%VSWHERE%" (
     )
 )
 
-REM Try common VS2022 paths if vswhere failed
+REM Fallback: check if cl.exe is already in PATH (running from Developer Command Prompt)
 if not defined VSINSTALL (
-    if exist "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvars64.bat" (
-        set "VSINSTALL=C:\Program Files\Microsoft Visual Studio\2022\Community"
-    )
-)
-if not defined VSINSTALL (
-    if exist "C:\Program Files\Microsoft Visual Studio\2022\Professional\VC\Auxiliary\Build\vcvars64.bat" (
-        set "VSINSTALL=C:\Program Files\Microsoft Visual Studio\2022\Professional"
-    )
-)
-if not defined VSINSTALL (
-    if exist "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\VC\Auxiliary\Build\vcvars64.bat" (
-        set "VSINSTALL=C:\Program Files\Microsoft Visual Studio\2022\Enterprise"
-    )
-)
-if not defined VSINSTALL (
-    if exist "C:\Program Files\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat" (
-        set "VSINSTALL=C:\Program Files\Microsoft Visual Studio\2022\BuildTools"
+    where cl.exe >nul 2>&1
+    if %ERRORLEVEL% EQU 0 (
+        echo Using cl.exe from PATH
+        goto :compile
     )
 )
 
@@ -39,14 +26,17 @@ if defined VSINSTALL (
     echo Found Visual Studio at: %VSINSTALL%
     call "%VSINSTALL%\VC\Auxiliary\Build\vcvars64.bat"
 ) else (
-    echo Visual Studio not found. Please run from Developer Command Prompt.
     echo.
-    echo Or install Visual Studio Build Tools from:
-    echo https://visualstudio.microsoft.com/downloads/
+    echo Visual Studio not found automatically.
+    echo Please run from "Developer Command Prompt for VS 2022"
+    echo.
+    echo Or run this in PowerShell:
+    echo   cmd /c """C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"" && cd /d d:\Profolio\EchoType\playground\ClipboardMonitor && build.bat"
     pause
     exit /b 1
 )
 
+:compile
 echo.
 echo Compiling ClipboardMonitor...
 

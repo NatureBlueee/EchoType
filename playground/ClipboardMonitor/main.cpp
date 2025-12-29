@@ -62,20 +62,24 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
     }
     DEBUG_LOG("ContextManager initialized");
 
-    // Register adapters
-    auto browserAdapter = std::make_shared<BrowserAdapter>(300);  // 300ms timeout (increased from 150ms to prevent data loss)
+    // Register adapters with generous timeout (5 seconds)
+    // This ensures UI Automation has enough time to complete
+    // Timeout is only for preventing infinite hangs, not for speed
+    const int MAX_TIMEOUT = 5000;  // 5 seconds max
+    
+    auto browserAdapter = std::make_shared<BrowserAdapter>(MAX_TIMEOUT);
     g_contextManager->RegisterAdapter(browserAdapter);
     DEBUG_LOG("BrowserAdapter registered");
 
-    auto wechatAdapter = std::make_shared<WeChatAdapter>(200, 5);  // 200ms timeout, 5 recent messages
+    auto wechatAdapter = std::make_shared<WeChatAdapter>(MAX_TIMEOUT, 5);  // 5 recent messages
     g_contextManager->RegisterAdapter(wechatAdapter);
     DEBUG_LOG("WeChatAdapter registered");
 
-    auto vscodeAdapter = std::make_shared<VSCodeAdapter>(150);  // 150ms timeout
+    auto vscodeAdapter = std::make_shared<VSCodeAdapter>(MAX_TIMEOUT);
     g_contextManager->RegisterAdapter(vscodeAdapter);
     DEBUG_LOG("VSCodeAdapter registered");
 
-    auto notionAdapter = std::make_shared<NotionAdapter>(150);  // 150ms timeout
+    auto notionAdapter = std::make_shared<NotionAdapter>(MAX_TIMEOUT);
     g_contextManager->RegisterAdapter(notionAdapter);
     DEBUG_LOG("NotionAdapter registered");
 
