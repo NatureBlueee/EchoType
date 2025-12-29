@@ -11,19 +11,25 @@
 //! # 模块说明
 //! - `config`: 配置项（存储路径、超时时间等）
 //! - `logger`: 日志写入（核心模块）
-//! - `keyboard`: 键盘事件监听
+//! - `keyboard_win`: Windows 原生键盘监听（使用 windows-rs）
 //! - `clipboard`: 剪贴板操作
-//! - `tray`: 系统托盘
 //! - `autostart`: 开机自启动
+//! - `gui`: 图形用户界面（Apple 风格）
 
 pub mod config;
 pub mod logger;
-pub mod keyboard;
 pub mod clipboard;
-pub mod tray;
 pub mod autostart;
+pub mod gui;
+pub mod tray;
+
+// Windows 专用模块
+#[cfg(windows)]
+pub mod keyboard_win;
 
 // 重新导出常用类型
 pub use logger::Logger;
-pub use keyboard::KeyboardEvent;
-pub use tray::{SystemTray, TrayEvent};
+pub use gui::{EchoKeyApp, SharedGuiState};
+
+#[cfg(windows)]
+pub use keyboard_win::KeyboardEvent;

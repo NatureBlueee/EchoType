@@ -30,6 +30,8 @@ pub struct Logger {
     current_line_empty: bool,
     /// 是否暂停记录
     paused: bool,
+    /// 文件是否已写入头部（防止重复写入）
+    header_written: bool,
 }
 
 impl Logger {
@@ -46,6 +48,7 @@ impl Logger {
             last_write_time: None,
             current_line_empty: true,
             paused: false,
+            header_written: false,
         })
     }
 
@@ -68,19 +71,21 @@ impl Logger {
         if self.current_date != Some(today) {
             self.current_date = Some(today);
             self.segment_number = 0;
-            self.create_new_file()?;
+            self.header_written = false;
+            self.writer = None; // 关闭旧文件
+            return self.open_or_create_file();
         }
         
         // 如果文件还没打开，打开它
         if self.writer.is_none() {
-            self.create_new_file()?;
+            return self.open_or_create_file();
         }
         
         Ok(())
     }
 
-    /// 创建新的日志文件
-    fn create_new_file(&mut self) -> io::Result<()> {
+    /// 打开或创建日志文件
+    fn open_or_create_file(&mut self) -> io::Result<()> {
         let date = self.current_date.unwrap_or_else(|| Local::now().date_naive());
         let path = self.get_log_path(date);
         
@@ -89,16 +94,9 @@ impl Logger {
             fs::create_dir_all(parent)?;
         }
         
-        // 检查文件是否已存在，如果存在且有内容，增加段号
-        while path.exists() && fs::metadata(&path).map(|m| m.len() > 0).unwrap_or(false) {
-            self.segment_number += 1;
-            let new_path = self.get_log_path(date);
-            if !new_path.exists() {
-                break;
-            }
-        }
-        
-        let path = self.get_log_path(date);
+        // 检查文件是否已存在且有内容
+        let file_exists = path.exists();
+        let file_has_content = file_exists && fs::metadata(&path).map(|m| m.len() > 0).unwrap_or(false);
         
         // 打开文件（追加模式）
         let file = OpenOptions::new()
@@ -108,10 +106,13 @@ impl Logger {
         
         let mut writer = BufWriter::new(file);
         
-        // 如果是新文件，写入头部
-        let metadata = fs::metadata(&path)?;
-        if metadata.len() == 0 {
-            self.write_header(&mut writer)?;
+        // 只在新文件时写入头部
+        if !file_has_content && !self.header_written {
+            self.write_header_to(&mut writer)?;
+            self.header_written = true;
+        } else if file_has_content {
+            // 文件已存在且有内容，标记头部已写入
+            self.header_written = true;
         }
         
         self.writer = Some(writer);
@@ -121,7 +122,7 @@ impl Logger {
     }
 
     /// 写入文件头部
-    fn write_header(&self, writer: &mut BufWriter<File>) -> io::Result<()> {
+    fn write_header_to(&self, writer: &mut BufWriter<File>) -> io::Result<()> {
         let now = Local::now();
         writeln!(writer, "================== EchoKey 日志 ==================")?;
         writeln!(writer, "日期：{}", now.format("%Y-%m-%d"))?;
@@ -170,7 +171,9 @@ impl Logger {
         self.ensure_file()?;
         
         // 检查是否需要换行并添加时间戳
-        if self.should_add_timestamp() {
+        let need_timestamp = self.should_add_timestamp();
+        
+        if need_timestamp {
             // 如果不是空行，先换行
             if !self.current_line_empty {
                 if let Some(ref mut writer) = self.writer {
@@ -222,16 +225,12 @@ impl Logger {
         
         if let Some(ref mut writer) = self.writer {
             writeln!(writer)?;
-            writer.flush()?;
-        }
-        
-        // 不设置 current_line_empty = true，这样下次写入不会添加时间戳
-        // 但我们需要写一些缩进来对齐
-        if let Some(ref mut writer) = self.writer {
+            // 写入缩进对齐时间戳
             write!(writer, "          ")?; // 与时间戳 [HH:MM:SS] 对齐
             writer.flush()?;
         }
         
+        // 不设置 current_line_empty = true，这样下次写入不会添加时间戳
         self.last_write_time = Some(Instant::now());
         
         Ok(())
@@ -303,9 +302,10 @@ impl Logger {
         
         // 增加段号
         self.segment_number += 1;
+        self.header_written = false;
         
         // 创建新文件
-        self.create_new_file()?;
+        self.open_or_create_file()?;
         
         Ok(())
     }
@@ -367,6 +367,18 @@ impl Logger {
     /// 是否处于暂停状态
     pub fn is_paused(&self) -> bool {
         self.paused
+    }
+
+    /// 设置暂停状态
+    pub fn set_paused(&mut self, paused: bool) -> io::Result<()> {
+        if paused != self.paused {
+            if paused {
+                self.pause()?;
+            } else {
+                self.resume()?;
+            }
+        }
+        Ok(())
     }
 
     /// 获取日志目录路径

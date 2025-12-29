@@ -1,0 +1,90 @@
+{
+"version": "1.0",
+"generated": "2025-12-29T14:34:12.236+08:00",
+"entries": [
+  {
+    "timestamp": "2025-12-29T14:33:29.509+08:00",
+    "content_type": "text",
+    "content": "苹果梨的桔子:\n这个天使用户群，的作用是？\n\n月月向前冲🌟:\n这个的群 也是我们Open Agents官方社群\n\n苹果梨的桔子:\n那这个群的作用是？参赛群？\n\n月月向前冲🌟:\n没错\n",
+    "content_preview": "苹果梨的桔子:\n这个天使用户群，的作用是？\n\n月月向前冲🌟:\n这个的群 也是我们Open Agents官方社群\n\n苹果梨的桔子:\n那这个群的作用是？参赛群？\n\n月月向前冲🌟:\n没错\n",
+    "source": {
+      "process_name": "WeChat.exe",
+      "process_path": "C:\\Program Files (x86)\\Tencent\\WeChat\\WeChat.exe",
+      "window_title": "微信",
+      "pid": 35888
+    }
+  },
+  {
+    "timestamp": "2025-12-29T14:33:33.156+08:00",
+    "content_type": "text",
+    "content": "\r\nName\t\t\r\nNatureBlueee\r\nNatureBlueee\r\nIntegrate Mem0 vector memory system with full agent tools\r\n0d429e2\r\n · \r\n19 hours ago\r\n.agent\r\nAdd theoretical discussion notes and update sync workflow\r\nlast week\r\n.claude\r\nIntegrate Mem0 vector memory system with full agent tools\r\n19 hours ago\r\n.venv/Scripts\r\nAdd new AI talent management article to references\r\n2 weeks ago\r\nConsensus\r\nAdd thesis proposal context and update methodology\r\n4 days ago\r\nContextForProject\r\nAdd literature processing plans and update research notes\r\n2 days ago\r\nPR\r\nAdd literature processing plans and update research notes\r\n2 days ago\r\nReference\r\nAdd literature processing plans and update research notes\r\n2 days ago\r\nReflections\r\nUpdate agent configs and add implementation docs\r\nyesterday\r\nTarget\r\nAdd literature processing plans and update research notes\r\n2 days ago\r\nacademic_network\r\nIntegrate Mem0 vector memory system with full agent tools\r\n19 hours ago\r\nproj_tpl\r\nAdd agent and documentation templates\r\nlast week\r\n.env.example\r\nSwitch agents to Gemini, update architecture docs\r\n2 days ago\r\n.gitattributes\r\nInitial commit\r\n2 weeks ago\r\n.gitignore\r\nAdd new AI talent management article to references\r\n2 weeks ago\r\nARCHITECTURE.md\r\nAdd qualitative methodology exemplar and workflow docs\r\nlast week\r\nCLAUDE.md\r\nAdd CLAUDE.md for Claude Code guidance\r\n2 days ago\r\nMEMORY.md\r\nIntegrate Mem0 vector memory system with full agent tools\r\n19 hours ago\r\nREADME.md\r\nAdd qualitative methodology exemplar and workflow docs\r\nlast week\r\n_STATE.md\r\nAdd literature processing plans and update research notes\r\n2 days ago\r\ncheck_env.py\r\nAdd chart extraction references and SVG utilities\r\n2 weeks ago\r\ncheck_tools.py\r\nAdd chart extraction references and SVG utilities\r\n2 weeks ago\r\nenv_capabilities.txt\r\nAdd chart extraction references and SVG utilities\r\n2 weeks ago\r\nimage-1.png\r\nUpdate workflow image in README\r\n2 weeks ago\r\nmanual_fix.md\r\nAdd OpenAgents academic network workspace and agents\r\nlast week\r\nopenagents.log\r\nAdd theoretical discussion notes and update sync workflow\r\nlast week\r\nrun_network.ps1\r\nAdd OpenAgents Hackathon setup docs and agent configs\r\nlast week\r\nrun_network_utf8.ps1\r\nAdd OpenAgents academic network workspace and agents\r\nlast week\r\nsetup_openagents.ps1\r\nAdd OpenAgents Hackathon setup docs and agent configs\r\nlast week\r\nstart_academic_network.ps1\r\nAdd thesis proposal context and update methodology\r\n4 days ago\r\nstart_all.ps1\r\nAdd theoretical discussion notes and update sync workflow\r\nlast week\r\ntry_render.py\r\nAdd chart extraction references and SVG utilities\r\n2 weeks ago\r\nRepository files navigation\r\nREADME\r\n论文工程化协作系统\r\n以「AI 素养对 Z 世代员工向上影响行为的研究」为例\r\n\r\nframework License: MIT\r\n\r\n📐 系统架构文档 | 📋 更新日志\r\n\r\n论文写作有个奇怪的悖论：我们用最现代的工具检索文献、统计数据，却用最古老的方式组织思想——从头写到尾，写完再改，改完再写。软件工程早就告别了这种线性开发，为什么学术写作还在坚持？\r\n\r\n这个项目是一次尝试。把版本控制、代码审查、持续集成的思路搬到论文里来，看看会发生什么。\r\n\r\n核心想法\r\n每一次修改都是一个 Pull Request。\r\n\r\n不直接动论文正文。想改什么，先开个PR，写清楚改什么、为什么改、有什么文献支撑。讨论确认后再合并。这样做的好处是：每一个论点的演变都有迹可循，每一次\"我当时为什么这么写\"都有答案。\r\n\r\nAI 不是写手，是有记忆的研究伙伴。\r\n\r\n让 AI 读你的文献库、记住你的理论框架、了解你的研究进度。它应该能在你问\"上级开放性怎么测量\"时，直接告诉你 Detert & Burris (2007) 用了6题量表、Cronbach's α = 0.89，而不是泛泛地说\"可以用问卷\"。\r\n\r\n文献是真相，讨论是中心。\r\n\r\n所有论据必须能追溯到 Reference/ 里的具体文献。所有洞见都来自与学术 AI 的对话记录。凭空捏造是被禁止的。\r\n\r\n项目结构\r\nGraduate-thesis/\r\n├── Reference/           # 文献库\r\n│   ├── PDF-MD/          # PDF → Markdown 转换（让 AI 能读）\r\n│   └── _INDEX.md        # 文献索引\r\n│\r\n├── Consensus/           # 与学术 AI 的问答记录\r\n│   ├── _CONTEXT.md      # 当前研究进度\r\n│   └── CON-*.md         # 每轮讨论\r\n│\r\n├── PR/                  # 修改请求\r\n│   └── PR-*.md          # 每个修改独立可执行\r\n│\r\n├── Target/              # 产出物\r\n│   └── Draft.md         # 论文正文\r\n│\r\n├── MEMORY.md            # AI 的笔记本（用户偏好、关键洞见）\r\n└── .agent/              # 规则与工作流\r\n    ├── rules/           # AI 行为约束\r\n    └── workflows/       # 操作流程（/start, /create-pr...）\r\n工作循环\r\n阅读文献 → 向学术AI提问 → 形成洞见 → 创建PR → 讨论确认 → 合并 → 更新进度\r\n    ↑                                                              ↓\r\n    └───────────────────── 循环 ←──────────────────────────────────┘\r\n不是\"写完初稿再修改\"，而是\"边研究边构建\"。论文在循环中生长。\r\n\r\n怎么用\r\n如果你是学生，想用这套框架写自己的论文：\r\n\r\nFork 这个仓库\r\n把 PDF 文献扔进 Reference/PDF-MD/pdfs/，运行转换脚本\r\n修改 .agent/rules/thesis-project.md，替换成你的研究主题和理论框架\r\n开始循环：读文献 → 提问 → 开PR → 合并\r\n如果你是 AI 开发者，想了解 agent 规则设计：\r\n\r\n看 .agent/ 目录。每个规则文件定义 AI 的身份、禁令、思维框架；每个工作流文件定义具体操作步骤。核心设计思想是：负面约束比正面指导更重要——与其告诉 AI \"你应该怎么做\"，不如明确\"你绝对不能做什么\"。\r\n\r\n关于这篇论文\r\n主题：AI 素养如何让 Z 世代员工影响他们的上级\r\n\r\n理论视角：资源依赖理论——当年轻员工掌握了上级缺乏的 AI 能力，权力天平会发生什么变化？\r\n\r\n方法：定性研究，15-20 名 Z 世代知识型员工的深度访谈\r\n\r\n当前进度：文献综述完成，方法论章节完成，准备进入田野\r\n\r\n一些教训\r\n在实际使用中踩过的坑，记在 MEMORY.md 里：\r\n\r\n简单直接的问题往往比精心设计的长 prompt 更有效\r\n合并 PR 时容易遗漏参考文献——后来加了强制 checklist\r\n论文修改不能孤立，新内容要和已有引用呼应\r\n不是所有文献都要下载，识别比收集更重要\r\nLicense\r\nMIT. 随便用。\r\n\r\n可用工作流\r\n命令\t用途\t说明\r\n/start\t新对话启动\t加载项目上下文\r\n/create-pr\t创建修改请求\t任何论文修改都要先开 PR\r\n/merge-pr\t合并 PR\t执行修改并更新状态\r\n/add-paper\t添加文献\tPDF → Markdown 转换\r\n/ask-academic-ai\t向学术AI提问\t使用四部分模板\r\n/analyze-answer\t分析AI回答\t标记文献优先级\r\n/deep-read\t深度阅读\t输出结构化笔记\r\n/sync\t同步状态\t更新 _STATE.md，解决信息孤岛\r\n/reflect\t记忆提取\t对话后提取值得记的内容\r\n设计原则：/sync 和 /reflect 不是执行器，先评估\"值不值得做\"。\"无需操作\"是合理结论。\r\n\r\n更新日志\r\nv0.2.0 (2025-12-20)\r\n新增\r\n\r\n/sync 工作流：系统状态同步，解决\"部分遵循\"和\"信息孤岛\"问题\r\n/reflect 工作流：对话后智能记忆提取，借鉴 Mem0 的 prompt 设计\r\n_STATE.md：系统状态快照文件，集中管理元信息\r\n评估优先原则：工作流先判断\"值不值得做\"\r\n改进\r\n\r\n工作流设计理念：\"无需操作\"是合理结论\r\nv0.1.0 (2025-12-14)\r\n初始版本\r\n\r\nPR 驱动的论文修改管理\r\nConsensus 结构化学术讨论\r\nReference 文献库 + PDF→Markdown\r\n.agent/rules/ 负面约束设计\r\n基础工作流：/start, /create-pr, /merge-pr, /add-paper, /ask-academic-ai\r\n写论文不该像在黑暗中摸索。每一步都应该知道自己在哪、来自哪里、要去哪里。\r\n\r\nAbout\r\nAI literacy's impact on emploee's upward influence among Generation Z: A perspective from resource dependency theory\r\n\r\nResources\r\n Readme\r\n Activity\r\nStars\r\n 0 stars\r\nWatchers\r\n 0 watching\r\nForks\r\n 0 forks\r\nReleases\r\nNo releases published\r\nCreate a new release\r\nPackages\r\nNo packages published\r\nPublish your first package\r\nContributors\r\n2\r\n@NatureBlueee\r\nNatureBlueee Nature\r\n@claude\r\nclaude Claude\r\nLanguages\r\nHTML\r\n99.1%\r\n \r\nOther\r\n0.9%\r\nSuggested workflows\r\nBased on your tech stack\r\n",
+    "content_preview": "\r\nName\t\t\r\nNatureBlueee\r\nNatureBlueee\r\nIntegrate Mem0 vector memory system with full agent tools\r\n0d429e2\r\n · \r\n19 hours ago\r\n.agent\r\nAdd theoretical discussion notes and update sync workflow\r\nlast wee...",
+    "source": {
+      "process_name": "comet.exe",
+      "process_path": "C:\\Users\\Lenovo\\AppData\\Local\\Perplexity\\Comet\\Application\\comet.exe",
+      "window_title": "NatureBlueee/Bachelor-thesis: AI literacy's impact on emploee's upward influence among Generation Z: A perspective from resource dependency theory - Comet",
+      "pid": 19128
+    }
+  },
+  {
+    "timestamp": "2025-12-29T14:33:36.329+08:00",
+    "content_type": "text",
+    "content": "# 📋 我的任务看板\r\n\r\n[View: Schedule](https://www.notion.so/2d7a78e8050181c6a402cc5d95fa4238?pvs=21)",
+    "content_preview": "# 📋 我的任务看板\r\n\r\n[View: Schedule](https://www.notion.so/2d7a78e8050181c6a402cc5d95fa4238?pvs=21)",
+    "source": {
+      "process_name": "Notion.exe",
+      "process_path": "C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Notion\\Notion.exe",
+      "window_title": "美丽人生 (1)",
+      "pid": 21816
+    }
+  },
+  {
+    "timestamp": "2025-12-29T14:33:49.706+08:00",
+    "content_type": "files",
+    "content": "C:\\Users\\Lenovo\\AppData\\Roaming\\ClipboardMonitor\\debug.log\nC:\\Users\\Lenovo\\AppData\\Roaming\\ClipboardMonitor\\clipboard_history.json",
+    "content_preview": "2 file(s)",
+    "source": {
+      "process_name": "explorer.exe",
+      "process_path": "C:\\Windows\\explorer.exe",
+      "window_title": "Target 和 1 个其他选项卡 - 文件资源管理器",
+      "pid": 9688
+    }
+  },
+  {
+    "timestamp": "2025-12-29T14:33:54.989+08:00",
+    "content_type": "files",
+    "content": "C:\\Users\\Lenovo\\AppData\\Roaming\\ClipboardMonitor\\clipboard_history.json\nC:\\Users\\Lenovo\\AppData\\Roaming\\ClipboardMonitor\\debug.log",
+    "content_preview": "2 file(s)",
+    "source": {
+      "process_name": "explorer.exe",
+      "process_path": "C:\\Windows\\explorer.exe",
+      "window_title": "Target 和 1 个其他选项卡 - 文件资源管理器",
+      "pid": 9688
+    }
+  },
+  {
+    "timestamp": "2025-12-29T14:34:02.547+08:00",
+    "content_type": "text",
+    "content": "\r\n￼\r\n又夏天又秋冬的清透版灰蓝琥珀！\r\n￼\r\n小破折号_\r\n￼\r\n1万+\r\n￼\r\n单眼皮 过度打扮吸引同性\r\n￼\r\n一颗枇杷\r\n￼\r\n1万+\r\n￼\r\n￼\r\n梨形身材小基数跳绳✂️22斤的腿！我做到了！\r\n￼\r\n丹丹要你好看！\r\n￼\r\n1万+\r\n￼\r\n你在慢慢长大，我在日益成长\r\n￼\r\n辣妈Siney育儿记\r\n￼",
+    "content_preview": "\r\n￼\r\n又夏天又秋冬的清透版灰蓝琥珀！\r\n￼\r\n小破折号_\r\n￼\r\n1万+\r\n￼\r\n单眼皮 过度打扮吸引同性\r\n￼\r\n一颗枇杷\r\n￼\r\n1万+\r\n￼\r\n￼\r\n梨形身材小基数跳绳✂️22斤的腿！我做到了！\r\n￼\r\n丹丹要你好看！\r\n￼\r\n1万+\r\n￼\r\n你在慢慢长大，我在日益成长\r\n￼\r\n辣妈Siney育儿记\r\n￼",
+    "source": {
+      "process_name": "Antigravity.exe",
+      "process_path": "C:\\Users\\Lenovo\\AppData\\Local\\Programs\\Antigravity\\Antigravity.exe",
+      "window_title": "playground - Antigravity - 2025-12-27.md",
+      "pid": 30588
+    }
+  },
+  {
+    "timestamp": "2025-12-29T14:34:12.206+08:00",
+    "content_type": "files",
+    "content": "C:\\Users\\Lenovo\\AppData\\Roaming\\ClipboardMonitor\\clipboard_history.json\nC:\\Users\\Lenovo\\AppData\\Roaming\\ClipboardMonitor\\debug.log",
+    "content_preview": "2 file(s)",
+    "source": {
+      "process_name": "explorer.exe",
+      "process_path": "C:\\Windows\\explorer.exe",
+      "window_title": "Target 和 1 个其他选项卡 - 文件资源管理器",
+      "pid": 9688
+    }
+  }
+]
+}

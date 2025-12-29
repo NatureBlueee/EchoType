@@ -1,0 +1,4 @@
+C:\Users\Lenovo\.gemini\antigravity\playground\cryo-crater\obj\Release\net8.0-windows\win-x64\FloatingTool.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\.gemini\antigravity\playground\cryo-crater\obj\Release\net8.0-windows\win-x64\FloatingTool.AssemblyInfoInputs.cache
+C:\Users\Lenovo\.gemini\antigravity\playground\cryo-crater\obj\Release\net8.0-windows\win-x64\FloatingTool.AssemblyInfo.cs
+C:\Users\Lenovo\.gemini\antigravity\playground\cryo-crater\obj\Release\net8.0-windows\win-x64\FloatingTool.csproj.CoreCompileInputs.cache

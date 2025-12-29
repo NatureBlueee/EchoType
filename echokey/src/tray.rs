@@ -1,169 +1,248 @@
 //! 系统托盘模块
 //!
-//! 在系统托盘显示图标和菜单，让用户可以：
-//! - 查看运行状态
-//! - 暂停/恢复记录
-//! - 打开日志目录
-//! - 新建日志段
-//! - 退出程序
+//! 实现系统托盘图标和右键菜单功能。
+//! 使用 tray-icon crate，在专门的线程中运行 Windows 消息循环。
 
+use std::sync::{Arc, Mutex, mpsc};
 use tray_icon::{
-    TrayIconBuilder, TrayIcon, TrayIconEvent,
-    menu::{Menu, MenuItem, MenuEvent, PredefinedMenuItem},
+    TrayIcon, TrayIconBuilder,
+    menu::{Menu, MenuEvent, MenuItem, PredefinedMenuItem},
     Icon,
 };
-use crossbeam_channel::Receiver;
 
-/// 托盘菜单事件
+/// 托盘事件
 #[derive(Debug, Clone)]
 pub enum TrayEvent {
+    /// 显示主窗口
+    ShowWindow,
     /// 暂停/恢复记录
     TogglePause,
-    /// 打开日志目录
-    OpenLogDir,
     /// 新建日志段
     NewSegment,
+    /// 打开日志目录
+    OpenLogDir,
     /// 退出程序
     Quit,
 }
 
-/// 菜单项 ID
-struct MenuIds {
-    toggle_pause: MenuItem,
-    open_log_dir: MenuItem,
-    new_segment: MenuItem,
-    quit: MenuItem,
-}
-
-/// 系统托盘
-pub struct SystemTray {
-    _tray_icon: TrayIcon,
-    menu_ids: MenuIds,
-    is_paused: bool,
-}
-
-impl SystemTray {
-    /// 创建系统托盘
-    pub fn new() -> Result<Self, String> {
-        // 创建菜单
-        let menu = Menu::new();
-        
-        let toggle_pause = MenuItem::new("⏸ 暂停记录", true, None);
-        let open_log_dir = MenuItem::new("📂 打开日志目录", true, None);
-        let new_segment = MenuItem::new("📄 新建日志段", true, None);
-        let separator = PredefinedMenuItem::separator();
-        let quit = MenuItem::new("❌ 退出", true, None);
-        
-        menu.append(&toggle_pause).map_err(|e| format!("菜单错误: {}", e))?;
-        menu.append(&open_log_dir).map_err(|e| format!("菜单错误: {}", e))?;
-        menu.append(&new_segment).map_err(|e| format!("菜单错误: {}", e))?;
-        menu.append(&separator).map_err(|e| format!("菜单错误: {}", e))?;
-        menu.append(&quit).map_err(|e| format!("菜单错误: {}", e))?;
-        
-        // 创建图标（使用内置图标）
-        let icon = create_icon()?;
-        
-        // 创建托盘图标
-        let tray_icon = TrayIconBuilder::new()
-            .with_menu(Box::new(menu))
-            .with_tooltip("EchoKey - 记录中 ✓")
-            .with_icon(icon)
-            .build()
-            .map_err(|e| format!("无法创建托盘图标: {}", e))?;
-        
-        Ok(Self {
-            _tray_icon: tray_icon,
-            menu_ids: MenuIds {
-                toggle_pause,
-                open_log_dir,
-                new_segment,
-                quit,
-            },
-            is_paused: false,
-        })
-    }
-    
-    /// 处理菜单事件
-    pub fn handle_menu_event(&self, event: &MenuEvent) -> Option<TrayEvent> {
-        if event.id == self.menu_ids.toggle_pause.id() {
-            Some(TrayEvent::TogglePause)
-        } else if event.id == self.menu_ids.open_log_dir.id() {
-            Some(TrayEvent::OpenLogDir)
-        } else if event.id == self.menu_ids.new_segment.id() {
-            Some(TrayEvent::NewSegment)
-        } else if event.id == self.menu_ids.quit.id() {
-            Some(TrayEvent::Quit)
-        } else {
-            None
-        }
-    }
-    
-    /// 更新暂停状态
-    pub fn set_paused(&mut self, paused: bool) {
-        self.is_paused = paused;
-        
-        let (text, tooltip) = if paused {
-            ("▶ 恢复记录", "EchoKey - 已暂停")
-        } else {
-            ("⏸ 暂停记录", "EchoKey - 记录中 ✓")
-        };
-        
-        self.menu_ids.toggle_pause.set_text(text);
-        // 注意：tray-icon 库目前不支持动态更新 tooltip
-        // 如果需要，可以考虑重建托盘图标
-        let _ = tooltip; // 暂时忽略
-    }
+/// 托盘状态
+pub struct TrayState {
+    pub paused: bool,
 }
 
 /// 创建托盘图标
 /// 
-/// 创建一个简单的 16x16 图标
-fn create_icon() -> Result<Icon, String> {
-    // 创建一个简单的 16x16 绿色方块图标
-    // RGBA 格式，每个像素 4 字节
-    let size = 16;
-    let mut rgba = Vec::with_capacity(size * size * 4);
+/// 返回一个 TrayIcon 实例和菜单项 ID 映射
+pub fn create_tray(
+    event_tx: mpsc::Sender<TrayEvent>,
+    _state: Arc<Mutex<TrayState>>,
+) -> Result<TrayIcon, String> {
+    // 创建菜单
+    let menu = Menu::new();
+    
+    let show_item = MenuItem::new("显示窗口", true, None);
+    let pause_item = MenuItem::new("暂停记录", true, None);
+    let new_segment_item = MenuItem::new("新建日志段", true, None);
+    let open_log_item = MenuItem::new("打开日志目录", true, None);
+    let quit_item = MenuItem::new("退出", true, None);
+    
+    // 保存菜单项 ID
+    let show_id = show_item.id().clone();
+    let pause_id = pause_item.id().clone();
+    let new_segment_id = new_segment_item.id().clone();
+    let open_log_id = open_log_item.id().clone();
+    let quit_id = quit_item.id().clone();
+    
+    menu.append(&show_item).map_err(|e| format!("添加菜单项失败: {}", e))?;
+    menu.append(&PredefinedMenuItem::separator()).map_err(|e| format!("添加分隔符失败: {}", e))?;
+    menu.append(&pause_item).map_err(|e| format!("添加菜单项失败: {}", e))?;
+    menu.append(&new_segment_item).map_err(|e| format!("添加菜单项失败: {}", e))?;
+    menu.append(&open_log_item).map_err(|e| format!("添加菜单项失败: {}", e))?;
+    menu.append(&PredefinedMenuItem::separator()).map_err(|e| format!("添加分隔符失败: {}", e))?;
+    menu.append(&quit_item).map_err(|e| format!("添加菜单项失败: {}", e))?;
+    
+    // 创建图标（使用内嵌的简单图标）
+    let icon = create_default_icon()?;
+    
+    // 创建托盘图标
+    let tray = TrayIconBuilder::new()
+        .with_menu(Box::new(menu))
+        .with_tooltip("EchoKey - 记录中")
+        .with_icon(icon)
+        .build()
+        .map_err(|e| format!("创建托盘图标失败: {}", e))?;
+    
+    // 启动菜单事件监听线程
+    std::thread::spawn(move || {
+        let menu_channel = MenuEvent::receiver();
+        
+        loop {
+            if let Ok(event) = menu_channel.recv() {
+                let tray_event = if event.id == show_id {
+                    TrayEvent::ShowWindow
+                } else if event.id == pause_id {
+                    TrayEvent::TogglePause
+                } else if event.id == new_segment_id {
+                    TrayEvent::NewSegment
+                } else if event.id == open_log_id {
+                    TrayEvent::OpenLogDir
+                } else if event.id == quit_id {
+                    TrayEvent::Quit
+                } else {
+                    continue;
+                };
+                
+                if event_tx.send(tray_event).is_err() {
+                    break;
+                }
+            }
+        }
+    });
+    
+    Ok(tray)
+}
+
+/// 创建默认图标（蓝色圆形，带 E 字母）
+fn create_default_icon() -> Result<Icon, String> {
+    // 创建一个简单的 32x32 RGBA 图标
+    let size = 32u32;
+    let mut rgba = vec![0u8; (size * size * 4) as usize];
+    
+    let center = size as f32 / 2.0;
+    let radius = center - 2.0;
     
     for y in 0..size {
         for x in 0..size {
-            // 简单的圆形图标
-            let dx = x as f32 - 7.5;
-            let dy = y as f32 - 7.5;
+            let idx = ((y * size + x) * 4) as usize;
+            let dx = x as f32 - center;
+            let dy = y as f32 - center;
             let dist = (dx * dx + dy * dy).sqrt();
             
-            if dist < 6.0 {
-                // 绿色填充
-                rgba.push(76);   // R
-                rgba.push(175);  // G
-                rgba.push(80);   // B
-                rgba.push(255);  // A
-            } else if dist < 7.5 {
-                // 深绿色边框
-                rgba.push(46);   // R
-                rgba.push(125);  // G
-                rgba.push(50);   // B
-                rgba.push(255);  // A
-            } else {
-                // 透明
-                rgba.push(0);
-                rgba.push(0);
-                rgba.push(0);
-                rgba.push(0);
+            if dist <= radius {
+                // Apple Blue: #007AFF
+                rgba[idx] = 0;      // R
+                rgba[idx + 1] = 122; // G
+                rgba[idx + 2] = 255; // B
+                rgba[idx + 3] = 255; // A
+                
+                // 绘制简单的 E 字母（白色）
+                let in_e = is_in_letter_e(x, y, size);
+                if in_e {
+                    rgba[idx] = 255;     // R
+                    rgba[idx + 1] = 255; // G
+                    rgba[idx + 2] = 255; // B
+                }
+            } else if dist <= radius + 1.0 {
+                // 抗锯齿边缘
+                let alpha = ((radius + 1.0 - dist) * 255.0) as u8;
+                rgba[idx] = 0;
+                rgba[idx + 1] = 122;
+                rgba[idx + 2] = 255;
+                rgba[idx + 3] = alpha;
             }
         }
     }
     
-    Icon::from_rgba(rgba, size as u32, size as u32)
-        .map_err(|e| format!("无法创建图标: {}", e))
+    Icon::from_rgba(rgba, size, size)
+        .map_err(|e| format!("创建图标失败: {}", e))
 }
 
-/// 获取菜单事件接收器
-pub fn menu_event_receiver() -> Receiver<MenuEvent> {
-    MenuEvent::receiver().clone()
+/// 判断点是否在字母 E 内
+fn is_in_letter_e(x: u32, y: u32, size: u32) -> bool {
+    let cx = size / 2;
+    let cy = size / 2;
+    
+    // E 字母的边界
+    let left = cx - 5;
+    let right = cx + 5;
+    let top = cy - 7;
+    let bottom = cy + 7;
+    let mid = cy;
+    
+    // 竖线
+    if x >= left && x <= left + 2 && y >= top && y <= bottom {
+        return true;
+    }
+    
+    // 上横线
+    if x >= left && x <= right && y >= top && y <= top + 2 {
+        return true;
+    }
+    
+    // 中横线
+    if x >= left && x <= right - 2 && y >= mid - 1 && y <= mid + 1 {
+        return true;
+    }
+    
+    // 下横线
+    if x >= left && x <= right && y >= bottom - 2 && y <= bottom {
+        return true;
+    }
+    
+    false
 }
 
-/// 获取托盘图标事件接收器
-#[allow(dead_code)]
-pub fn tray_event_receiver() -> Receiver<TrayIconEvent> {
-    TrayIconEvent::receiver().clone()
+/// 更新托盘图标的暂停状态
+pub fn update_pause_state(tray: &TrayIcon, paused: bool) {
+    let tooltip = if paused {
+        "EchoKey - 已暂停"
+    } else {
+        "EchoKey - 记录中"
+    };
+    
+    let _ = tray.set_tooltip(Some(tooltip));
+    
+    // 可以根据状态更换图标颜色
+    if let Ok(icon) = create_status_icon(paused) {
+        let _ = tray.set_icon(Some(icon));
+    }
 }
+
+/// 创建状态图标
+fn create_status_icon(paused: bool) -> Result<Icon, String> {
+    let size = 32u32;
+    let mut rgba = vec![0u8; (size * size * 4) as usize];
+    
+    let center = size as f32 / 2.0;
+    let radius = center - 2.0;
+    
+    // 颜色选择
+    let (r, g, b) = if paused {
+        (142, 142, 147) // SF Gray
+    } else {
+        (0, 122, 255)   // Apple Blue
+    };
+    
+    for y in 0..size {
+        for x in 0..size {
+            let idx = ((y * size + x) * 4) as usize;
+            let dx = x as f32 - center;
+            let dy = y as f32 - center;
+            let dist = (dx * dx + dy * dy).sqrt();
+            
+            if dist <= radius {
+                rgba[idx] = r;
+                rgba[idx + 1] = g;
+                rgba[idx + 2] = b;
+                rgba[idx + 3] = 255;
+                
+                // E 字母
+                if is_in_letter_e(x, y, size) {
+                    rgba[idx] = 255;
+                    rgba[idx + 1] = 255;
+                    rgba[idx + 2] = 255;
+                }
+            } else if dist <= radius + 1.0 {
+                let alpha = ((radius + 1.0 - dist) * 255.0) as u8;
+                rgba[idx] = r;
+                rgba[idx + 1] = g;
+                rgba[idx + 2] = b;
+                rgba[idx + 3] = alpha;
+            }
+        }
+    }
+    
+    Icon::from_rgba(rgba, size, size)
+        .map_err(|e| format!("创建图标失败: {}", e))
+}
+
